@@ -1,0 +1,694 @@
+/* ==========================================
+   RESUME PAGE STYLES
+   Fonts: Playfair Display (headings) + Poppins (body)
+   ========================================== */
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes barGrow {
+    from { width: 0; }
+}
+
+/* ==========================================
+   HERO BANNER
+   ========================================== */
+.resume-hero {
+    background: linear-gradient(135deg, #7a5c3e 0%, #4a3420 100%);
+    padding: 70px 8% 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative rings */
+.resume-hero::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.06);
+    top: -200px;
+    right: -100px;
+}
+
+.resume-hero::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.05);
+    bottom: -120px;
+    left: 8%;
+}
+
+.resume-hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 0.7s ease both;
+}
+
+/* Hero Text */
+.resume-eyebrow {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 14px;
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    padding-bottom: 6px;
+}
+
+.resume-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.resume-name em {
+    font-style: italic;
+    color: rgba(255,255,255,0.75);
+}
+
+.resume-tagline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 30px;
+}
+
+/* Contact chips in hero */
+.resume-hero-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hero-contact-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.85);
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 7px 14px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(6px);
+}
+
+.hero-contact-chip:hover {
+    background: rgba(255,255,255,0.2);
+    border-color: rgba(255,255,255,0.5);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Hero Photo */
+.resume-hero-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    flex-shrink: 0;
+}
+
+.photo-frame {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid rgba(255,255,255,0.25);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+    transition: transform 0.4s ease;
+}
+
+.photo-frame:hover {
+    transform: scale(1.04);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Download button */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: #7a5c3e;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+.download-btn:hover {
+    background: rgba(255,255,255,0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ==========================================
+   RESUME BODY — Two Column Grid
+   ========================================== */
+.resume-body {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    gap: 0;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 8% 80px;
+    animation: fadeUp 0.7s ease 0.1s both;
+}
+
+.resume-col--left {
+    padding: 50px 50px 50px 0;
+    border-right: 1px solid rgba(122,92,62,0.18);
+}
+
+.resume-col--right {
+    padding: 50px 0 50px 50px;
+}
+
+/* ==========================================
+   SECTION BLOCKS
+   ========================================== */
+.resume-block {
+    margin-bottom: 44px;
+}
+
+/* Section title — small all-caps label */
+.block-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #7a5c3e;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(122,92,62,0.2);
+}
+
+/* Profile paragraph */
+.resume-profile {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14.5px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--text-main);
+    opacity: 0.85;
+}
+
+/* ==========================================
+   TIMELINE (Experience & Coursework)
+   ========================================== */
+.timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Vertical line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 10px;
+    bottom: 10px;
+    width: 1px;
+    background: rgba(122,92,62,0.2);
+}
+
+.timeline-item {
+    display: flex;
+    gap: 22px;
+    padding-bottom: 32px;
+    position: relative;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+/* Dot on the line */
+.timeline-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #7a5c3e;
+    border: 3px solid var(--bg-main);
+    box-shadow: 0 0 0 2px rgba(122,92,62,0.4);
+    flex-shrink: 0;
+    margin-top: 4px;
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.3);
+}
+
+.timeline-content {
+    flex: 1;
+    background: var(--card-bg);
+    border: 1px solid rgba(122,92,62,0.12);
+    border-radius: 16px;
+    padding: 20px 22px;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    border-color: rgba(122,92,62,0.3);
+    box-shadow: 0 6px 20px var(--card-shadow);
+    transform: translateX(4px);
+}
+
+.timeline-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+}
+
+.timeline-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.3;
+}
+
+.timeline-date {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #7a5c3e;
+    white-space: nowrap;
+    background: rgba(122,92,62,0.1);
+    padding: 3px 10px;
+    border-radius: 50px;
+    flex-shrink: 0;
+}
+
+.timeline-org {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-main);
+    opacity: 0.55;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-main);
+    opacity: 0.8;
+    margin-bottom: 12px;
+}
+
+.timeline-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.t-tag {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 50px;
+    background: var(--bg-secondary);
+    color: var(--text-main);
+    border: 1px solid rgba(122,92,62,0.2);
+    letter-spacing: 0.3px;
+}
+
+/* ==========================================
+   PROJECT CARDS (in resume)
+   ========================================== */
+.project-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.r-project-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(122,92,62,0.12);
+    border-radius: 14px;
+    padding: 18px 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.r-project-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: rgba(122,92,62,0);
+    transition: background 0.3s ease;
+    border-radius: 0 2px 2px 0;
+}
+
+.r-project-card:hover {
+    border-color: rgba(122,92,62,0.35);
+    transform: translateX(4px);
+    box-shadow: 0 6px 18px var(--card-shadow);
+}
+
+.r-project-card:hover::before {
+    background: #7a5c3e;
+}
+
+.r-project-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.r-project-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-main);
+    line-height: 1.3;
+}
+
+.r-project-tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+
+.r-project-card p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-main);
+    opacity: 0.72;
+}
+
+/* ==========================================
+   EDUCATION CARDS
+   ========================================== */
+.edu-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.edu-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--card-bg);
+    border: 1px solid rgba(122,92,62,0.12);
+    border-radius: 14px;
+    padding: 16px 18px;
+    transition: all 0.3s ease;
+}
+
+.edu-card:hover {
+    border-color: rgba(122,92,62,0.35);
+    transform: translateX(4px);
+    box-shadow: 0 4px 14px var(--card-shadow);
+}
+
+.edu-icon {
+    font-size: 24px;
+    width: 48px;
+    height: 48px;
+    background: rgba(122,92,62,0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.edu-info h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 3px;
+}
+
+.edu-school {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: var(--text-main);
+    opacity: 0.65;
+}
+
+.edu-year {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #7a5c3e;
+    margin-top: 2px;
+}
+
+/* ==========================================
+   SKILL BARS
+   ========================================== */
+.skill-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.skill-bar-item {}
+
+.skill-bar-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.skill-bar-label span:first-child {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.skill-pct {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #7a5c3e;
+}
+
+.skill-bar-track {
+    width: 100%;
+    height: 7px;
+    background: rgba(122,92,62,0.12);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    width: 0;                          /* starts at 0, JS animates to --w */
+    background: linear-gradient(90deg, #7a5c3e, #b08060);
+    border-radius: 50px;
+    transition: width 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* ==========================================
+   TOOL CHIPS
+   ========================================== */
+.tool-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tool-chip {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 7px 14px;
+    border-radius: 50px;
+    background: var(--card-bg);
+    color: var(--text-main);
+    border: 1px solid rgba(122,92,62,0.2);
+    transition: all 0.25s ease;
+    cursor: default;
+}
+
+.tool-chip:hover {
+    background: rgba(122,92,62,0.12);
+    border-color: #7a5c3e;
+    color: #7a5c3e;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   CERTIFICATIONS (right column)
+   ========================================== */
+.cert-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cert-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--card-bg);
+    border: 1px solid rgba(122,92,62,0.12);
+    border-radius: 12px;
+    padding: 14px 16px;
+    transition: all 0.3s ease;
+}
+
+.cert-row:hover {
+    border-color: rgba(122,92,62,0.35);
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+.cert-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #7a5c3e;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px rgba(122,92,62,0.2);
+}
+
+.cert-row-info strong {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2px;
+}
+
+.cert-row-info span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    color: #7a5c3e;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================
+RESPONSIVE
+   ========================================== */
+@media (max-width: 1000px) {
+    .resume-body {
+        grid-template-columns: 1fr;
+        padding: 0 6% 60px;
+    }
+
+    .resume-col--left {
+        padding: 40px 0 0 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(122,92,62,0.18);
+        padding-bottom: 40px;
+    }
+
+    .resume-col--right {
+        padding: 40px 0 0 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .resume-hero {
+        padding: 50px 6% 50px;
+    }
+
+    .resume-hero-inner {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .resume-hero-contacts {
+        justify-content: center;
+    }
+
+    .resume-hero-photo {
+        flex-direction: row;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .photo-frame {
+        width: 130px;
+        height: 130px;
+    }
+
+    .timeline-header {
+        flex-direction: column;
+        gap: 6px;
+    }
+}
+
+@media (max-width: 500px) {
+    .resume-body {
+        padding: 0 5% 50px;
+    }
+
+    .resume-hero-photo {
+        flex-direction: column;
+    }
+
+    .resume-hero-contacts {
+        flex-direction: column;
+        align-items: center;
+    }
+}

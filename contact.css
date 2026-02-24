@@ -1,0 +1,241 @@
+/* ==========================================
+   CONTACT PAGE STYLES
+   ========================================== */
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================
+   LAYOUT
+   ========================================== */
+.contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 8%;
+    gap: 80px;
+    max-width: 1300px;
+    margin: 0 auto;
+    animation: fadeUp 0.7s ease both;
+}
+
+/* ==========================================
+   LEFT COLUMN
+   ========================================== */
+.sub-heading {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #7a5c3e;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.contact-left {
+    flex: 1;
+    max-width: 480px;
+}
+
+.contact-left h1 {
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: var(--text-main);
+}
+
+.contact-intro {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: var(--text-main);
+    opacity: 0.8;
+}
+
+/* ==========================================
+   CONTACT CARDS
+   ========================================== */
+.contact-method-grid {
+    display: grid;
+    gap: 14px;
+}
+
+.method-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--card-bg);
+    padding: 18px 22px;
+    border-radius: 16px;
+    border: 1px solid rgba(122, 92, 62, 0.15);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.method-card:hover {
+    transform: translateX(8px);
+    border-color: #7a5c3e;
+    box-shadow: 0 8px 20px var(--card-shadow);
+    background: rgba(122, 92, 62, 0.08);
+}
+
+.method-card .icon {
+    font-size: 22px;
+    background: var(--bg-secondary);
+    padding: 12px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    line-height: 1;
+    transition: background 0.3s ease;
+}
+
+.method-card:hover .icon {
+    background: rgba(122, 92, 62, 0.15);
+}
+
+.method-text strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 2px;
+}
+
+.method-text p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--text-main);
+    opacity: 0.7;
+}
+
+/* ==========================================
+   RIGHT COLUMN — FORM
+   ========================================== */
+.contact-right {
+    flex: 1.1;
+    background: var(--bg-secondary);
+    padding: 50px 50px;
+    border-radius: 28px;
+    box-shadow: 0 15px 40px var(--card-shadow);
+    border: 1px solid rgba(122, 92, 62, 0.15);
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Placeholder */
+::placeholder {
+    color: var(--text-main);
+    opacity: 0.4;
+}
+
+.input-row {
+    display: flex;
+    gap: 20px;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-main);
+    letter-spacing: 0.3px;
+}
+
+.contact-right input,
+.contact-right textarea {
+    padding: 15px 18px;
+    border-radius: 12px;
+    border: 1.5px solid rgba(122, 92, 62, 0.2);
+    background: var(--bg-main);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: var(--text-main);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.contact-right input:focus,
+.contact-right textarea:focus {
+    outline: none;
+    border-color: #7a5c3e;
+    background: var(--bg-secondary);
+    box-shadow: 0 0 0 3px rgba(122, 92, 62, 0.12);
+}
+
+.contact-right textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: #7a5c3e;
+    color: #fff;
+    border: 2px solid #7a5c3e;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
+    background: #5c4430;
+    border-color: #5c4430;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(122, 92, 62, 0.35);
+}
+
+#formStatus {
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 1100px) {
+    .contact-wrapper {
+        flex-direction: column;
+        padding: 70px 6%;
+        gap: 50px;
+    }
+
+    .contact-left {
+        max-width: 100%;
+    }
+
+    .contact-left h1 {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-wrapper {
+        padding: 50px 5%;
+    }
+
+    .input-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .contact-right {
+        padding: 35px 25px;
+    }
+}

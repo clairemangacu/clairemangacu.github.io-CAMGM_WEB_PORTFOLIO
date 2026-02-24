@@ -1,0 +1,976 @@
+/* ==========================================
+   ABOUT PAGE STYLES
+   Fonts: Playfair Display (headings) + Poppins (body)
+   ========================================== */
+
+/* --- Animations --- */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatY {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-8px); }
+}
+
+@keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.5); }
+    70%  { box-shadow: 0 0 0 8px rgba(76, 175, 80, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+}
+
+@keyframes dotPop {
+    from { opacity: 0; transform: scale(0); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* --- Shared Labels (used site-wide) --- */
+.about-label,
+.section-label {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #7a5c3e;
+    margin-bottom: 14px;
+    border-bottom: 2px solid rgba(122, 92, 62, 0.3);
+    padding-bottom: 6px;
+}
+
+/* --- Italic accent in headings --- */
+.title-italic {
+    font-style: italic;
+    color: #7a5c3e;
+}
+
+/* ==========================================
+   ABOUT HERO SECTION
+   ========================================== */
+.about-section {
+    padding: 100px 8% 80px;
+    animation: fadeUp 0.7s ease both;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   CREATIVE IMAGE BLOCK
+   ========================================== */
+.about-image-block {
+    flex-shrink: 0;
+    position: relative;
+}
+
+.image-stack {
+    position: relative;
+    width: 340px;
+    height: 440px;
+}
+
+/* Big rotated background shape */
+.img-bg-shape {
+    position: absolute;
+    width: 280px;
+    height: 340px;
+    background: rgba(122, 92, 62, 0.12);
+    border: 2px solid rgba(122, 92, 62, 0.2);
+    border-radius: 40% 60% 55% 45% / 45% 40% 60% 55%;
+    top: 30px;
+    left: 30px;
+    z-index: 0;
+    transition: border-radius 6s ease-in-out;
+    animation: floatY 6s ease-in-out infinite;
+}
+
+/* Main photo frame */
+.img-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 290px;
+    height: 370px;
+    border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+    overflow: hidden;
+    border: 3px solid rgba(122, 92, 62, 0.35);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    transition: border-radius 0.6s ease, transform 0.4s ease;
+}
+
+.img-frame:hover {
+    border-radius: 30px;
+    transform: scale(1.02);
+}
+
+.img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.img-frame:hover img {
+    transform: scale(1.05);
+}
+
+/* Floating stat cards */
+.stat-card {
+    position: absolute;
+    z-index: 5;
+    background: var(--bg-secondary);
+    border: 1px solid rgba(122, 92, 62, 0.25);
+    border-radius: 18px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(8px);
+    white-space: nowrap;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 35px rgba(122, 92, 62, 0.2);
+}
+
+.stat-card--top {
+    top: -18px;
+    right: -10px;
+    animation: floatY 4s ease-in-out infinite;
+}
+
+.stat-card--bottom {
+    bottom: 20px;
+    right: -20px;
+    animation: floatY 5s ease-in-out infinite 1s;
+}
+
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #7a5c3e;
+    line-height: 1;
+}
+
+.stat-icon {
+    font-size: 20px;
+    color: #7a5c3e;
+}
+
+.stat-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-main);
+    opacity: 0.75;
+    line-height: 1.4;
+}
+
+/* Dot grid decoration */
+.dot-grid {
+    position: absolute;
+    bottom: -10px;
+    left: -20px;
+    display: grid;
+    grid-template-columns: repeat(3, 10px);
+    gap: 8px;
+    z-index: 0;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: rgba(122, 92, 62, 0.4);
+    border-radius: 50%;
+    animation: dotPop 0.4s ease var(--d, 0s) both;
+}
+
+/* Availability badge */
+.avail-badge {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-secondary);
+    border: 1px solid rgba(122, 92, 62, 0.25);
+    border-radius: 50px;
+    padding: 8px 18px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-main);
+    white-space: nowrap;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: #4CAF50;
+    border-radius: 50%;
+    flex-shrink: 0;
+    animation: pulse 2s infinite;
+}
+
+/* ==========================================
+   ABOUT TEXT
+   ========================================== */
+.about-text {
+    flex: 1;
+}
+
+.about-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 4.5vw, 56px);
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 24px;
+    line-height: 1.15;
+}
+
+.about-text p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--text-main);
+    opacity: 0.85;
+    margin-bottom: 16px;
+    max-width: 540px;
+}
+
+.about-text strong {
+    font-weight: 600;
+    color: #7a5c3e;
+}
+
+/* ==========================================
+   CTA BUTTONS (in About text)
+   ========================================== */
+.about-cta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 36px;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    letter-spacing: 0.3px;
+    cursor: pointer;
+}
+
+.cta-btn--filled {
+    background: #7a5c3e;
+    color: #fff;
+    border: 2px solid #7a5c3e;
+    box-shadow: 0 4px 14px rgba(122, 92, 62, 0.25);
+}
+
+.cta-btn--filled:hover {
+    background: #5c4430;
+    border-color: #5c4430;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(122, 92, 62, 0.35);
+}
+
+.cta-btn--outline {
+    background: transparent;
+    color: var(--text-main);
+    border: 2px solid rgba(122, 92, 62, 0.4);
+}
+
+.cta-btn--outline:hover {
+    border-color: #7a5c3e;
+    color: #7a5c3e;
+    transform: translateY(-3px);
+    background: rgba(122, 92, 62, 0.06);
+}
+
+.cta-btn--ghost {
+    background: transparent;
+    color: var(--text-main);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-3px);
+}
+
+/* ==========================================
+   OVAL / PILL SECTIONS
+   ========================================== */
+.oval-section {
+    padding: 70px 8%;
+    display: flex;
+    justify-content: center;
+}
+
+.oval-section.alt {
+    background: rgba(122, 92, 62, 0.06);
+}
+
+.oval-content,
+.skills,
+.soft-skills {
+    background: var(--card-bg);
+    padding: 60px 70px;
+    border-radius: 60px;
+    max-width: 960px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(122, 92, 62, 0.15);
+    box-shadow: 0 10px 30px var(--card-shadow);
+    transition: background 0.4s ease;
+}
+
+.oval-content h2,
+.skills h2,
+.soft-skills h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 20px;
+}
+
+.oval-content p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--text-main);
+    opacity: 0.8;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   TECHNICAL SKILLS
+   ========================================== */
+.skills-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 110px;
+    cursor: default;
+    transition: transform 0.3s ease;
+}
+
+.skill:hover {
+    transform: translateY(-6px);
+}
+
+.skill-icon-wrap {
+    width: 70px;
+    height: 70px;
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    border: 1px solid rgba(122, 92, 62, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+.skill:hover .skill-icon-wrap {
+    border-color: #7a5c3e;
+    background: rgba(122, 92, 62, 0.1);
+    box-shadow: 0 8px 20px rgba(122, 92, 62, 0.2);
+}
+
+.skill-icon-wrap img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.skill p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-main);
+    opacity: 0.85;
+}
+
+/* ==========================================
+   CERTIFICATIONS
+   ========================================== */
+.certs-section {
+    padding: 80px 8%;
+    background: var(--bg-secondary);
+    border-top: 1px solid rgba(122, 92, 62, 0.12);
+    border-bottom: 1px solid rgba(122, 92, 62, 0.12);
+}
+
+.certs-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.certs-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.certs-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 10px;
+}
+
+.certs-header p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-main);
+    opacity: 0.65;
+}
+
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+/* 5th card spans full width */
+.cert-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 560px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.cert-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--bg-main);
+    border: 1px solid rgba(122, 92, 62, 0.15);
+    border-radius: 20px;
+    padding: 22px 26px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle left accent line */
+.cert-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: rgba(122, 92, 62, 0);
+    border-radius: 0 2px 2px 0;
+    transition: background 0.3s ease;
+}
+
+.cert-card:hover {
+    border-color: rgba(122, 92, 62, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px var(--card-shadow);
+}
+
+.cert-card:hover::before {
+    background: #7a5c3e;
+}
+
+.cert-icon {
+    font-size: 28px;
+    width: 52px;
+    height: 52px;
+    background: rgba(122, 92, 62, 0.1);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.3s ease;
+}
+
+.cert-card:hover .cert-icon {
+    background: rgba(122, 92, 62, 0.18);
+}
+
+.cert-info {
+    flex: 1;
+}
+
+.cert-org {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #7a5c3e;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.cert-info h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-main);
+    line-height: 1.35;
+}
+
+.cert-badge {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    border-radius: 50px;
+    padding: 4px 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* ==========================================
+   SOFT SKILLS
+   ========================================== */
+.soft-skills-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 35px;
+}
+
+.soft-skill-item {
+    background: var(--bg-secondary);
+    border: 1px solid rgba(122, 92, 62, 0.2);
+    border-radius: 16px;
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.soft-skill-item:hover {
+    border-color: #7a5c3e;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px var(--card-shadow);
+    background: rgba(122, 92, 62, 0.06);
+}
+
+.soft-icon {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.soft-skill-item p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-main);
+    margin: 0;
+}
+
+/* ==========================================
+   CTA BANNER
+   ========================================== */
+.cta-banner {
+    padding: 90px 8%;
+    background: linear-gradient(135deg, #7a5c3e 0%, #5c4430 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative circles in background */
+.cta-banner::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    top: -150px;
+    right: -100px;
+}
+
+.cta-banner::after {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.06);
+    bottom: -80px;
+    left: 5%;
+}
+
+.cta-banner-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-banner-text .section-label {
+    color: rgba(255, 255, 255, 0.6);
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.cta-banner-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 14px;
+    line-height: 1.2;
+}
+
+.cta-banner-text h2 .title-italic {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.cta-banner-text p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.7;
+    max-width: 480px;
+}
+
+.cta-banner-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+
+/* Banner buttons override */
+.cta-banner .cta-btn--filled {
+    background: #fff;
+    color: #7a5c3e;
+    border-color: #fff;
+}
+
+.cta-banner .cta-btn--filled:hover {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.9);
+    color: #5c4430;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.cta-banner .cta-btn--ghost {
+    color: rgba(255, 255, 255, 0.85);
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.cta-banner .cta-btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.7);
+    color: #fff;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 1024px) {
+    .about-container {
+        gap: 60px;
+    }
+
+    .image-stack {
+        width: 300px;
+        height: 400px;
+    }
+
+    .img-frame {
+        width: 260px;
+        height: 330px;
+    }
+
+    .img-bg-shape {
+        width: 240px;
+        height: 300px;
+    }
+
+    .cta-banner-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .cta-banner-text p {
+        margin: 0 auto;
+    }
+
+    .cta-banner-actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 80px;
+    }
+
+    .about-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-cta {
+        justify-content: center;
+    }
+
+    .certs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cert-card:last-child:nth-child(odd) {
+        grid-column: 1;
+        max-width: 100%;
+    }
+
+    .oval-content,
+    .skills,
+    .soft-skills {
+        padding: 50px 30px;
+        border-radius: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-section {
+        padding: 60px 5% 60px;
+    }
+
+    .image-stack {
+        width: 260px;
+        height: 340px;
+    }
+
+    .img-frame {
+        width: 220px;
+        height: 280px;
+    }
+
+    .img-bg-shape {
+        width: 200px;
+        height: 260px;
+    }
+
+    .stat-card--top  { right: -5px; }
+    .stat-card--bottom { right: -10px; }
+
+    .oval-section {
+        padding: 50px 5%;
+    }
+
+    .certs-section {
+        padding: 60px 5%;
+    }
+
+    .cta-banner {
+        padding: 70px 5%;
+    }
+
+    .soft-skills-grid {
+        gap: 12px;
+    }
+
+    .soft-skill-item {
+        padding: 14px 20px;
+    }
+}
+
+/* ==========================================
+   CAPABILITIES SECTION
+   ========================================== */
+.capabilities-section {
+    padding: 80px 8%;
+    background: var(--bg-secondary);
+    border-top: 1px solid rgba(122, 92, 62, 0.12);
+    border-bottom: 1px solid rgba(122, 92, 62, 0.12);
+}
+
+.capabilities-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.capabilities-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.capabilities-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 10px;
+}
+
+.capabilities-header p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-main);
+    opacity: 0.65;
+}
+
+/* 3-column grid — 9 cards = 3 rows of 3 */
+.capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.capability-card {
+    background: var(--bg-main);
+    border: 1px solid rgba(122, 92, 62, 0.15);
+    border-radius: 22px;
+    padding: 30px 26px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Top accent bar revealed on hover */
+.capability-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #7a5c3e, #b08060);
+    border-radius: 22px 22px 0 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.capability-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(122, 92, 62, 0.4);
+    box-shadow: 0 16px 40px var(--card-shadow);
+}
+
+.capability-card:hover::before {
+    opacity: 1;
+}
+
+.capability-icon {
+    font-size: 28px;
+    width: 56px;
+    height: 56px;
+    background: rgba(122, 92, 62, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    flex-shrink: 0;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.capability-card:hover .capability-icon {
+    background: rgba(122, 92, 62, 0.2);
+    transform: scale(1.08);
+}
+
+.capability-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.capability-card p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13.5px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--text-main);
+    opacity: 0.78;
+    flex: 1;
+}
+
+/* ==========================================
+   CAPABILITIES RESPONSIVE
+   ========================================== */
+@media (max-width: 1024px) {
+    .capabilities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .capabilities-section {
+        padding: 60px 5%;
+    }
+
+    .capabilities-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .capability-card {
+        padding: 24px 20px;
+    }
+}
