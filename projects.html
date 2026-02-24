@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clairspace | Projects</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="projects.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">clairspace</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+</header>
+
+<!-- HERO -->
+<section class="projects-hero">
+    <div class="projects-intro">
+        <div class="intro-text">
+            <span class="section-label">Portfolio</span>
+            <p>Click any project card to explore the full story — the process, tools, and thinking behind each build.</p>
+        </div>
+        <div class="intro-title">
+            <h1>MY<br><span class="intro-title-ghost">WORK</span></h1>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION HEADER -->
+<div class="section-header">
+    <h2>Featured Projects</h2>
+    <p>Click a card to peek inside ✦</p>
+</div>
+
+<!-- PROJECTS GRID -->
+<div class="projects-grid">
+
+    <!-- Card 1: GlamTips — NO live, HAS source code -->
+    <div class="project-card"
+            data-title="GlamTips Nails & Lashes Salon Website"
+            data-number="Project 01"
+            data-type="Beauty & Lifestyle"
+            data-tags="HTML,CSS,JavaScript"
+            data-description="A full beauty brand experience built from the ground up. Every spacing decision, color choice, and transition was intentional to mirror the luxury feel of the salon and translate elegance into a digital format."
+            data-highlights="Mobile-first responsive layout|Custom CSS animations for page transitions|Booking inquiry section with styled form|Warm pastel color palette aligned to brand identity"
+            data-image="images/glam.png"
+            data-live="none"
+            data-code="https://github.com/clairemangacu/glamtips">
+        <div class="card-image-wrap">
+            <img src="images/glam.png" alt="GlamTips Nails & Lashes Salon Website">
+            <div class="card-overlay">
+                <div class="overlay-hint">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    View Project
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <span class="card-number">01</span>
+            <h3>GlamTips Nails & Lashes Salon Website</h3>
+            <p>A beauty brand site focused on elegance, warmth, and seamless UX — designed to feel as polished as the services it represents.</p>
+            <div class="card-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 2: Singku — HAS live, HAS source code -->
+    <div class="project-card"
+            data-title="Singku Coffee Shop Website"
+            data-number="Project 02"
+            data-type="F&B / Branding"
+            data-tags="HTML,CSS,WordPress"
+            data-description="Singku Café needed a digital home as warm as their drinks. I created an immersive web experience — rich brown tones, a layered layout that guides visitors from menu to inquiry, and WordPress for easy content updates."
+            data-highlights="WordPress CMS for easy menu management|Responsive design across all screen sizes|Warm café-inspired visual design system|Online contact and inquiry section"
+            data-image="images/singku.png"
+            data-live="https://clairemangacu.github.io/clairemangacu.github.io-singku-cafe/"
+            data-code="https://github.com/clairemangacu/clairemangacu.github.io-singku-cafe">
+        <div class="card-image-wrap">
+            <img src="images/singku.png" alt="Singku Coffee Shop Website">
+            <div class="card-overlay">
+                <div class="overlay-hint">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    View Project
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <span class="card-number">02</span>
+            <h3>Singku Coffee Shop Website</h3>
+            <p>An inviting café concept site — rich textures, warm tones, and a layout that makes you feel like you're already inside.</p>
+            <div class="card-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">WordPress</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 3: Anatomie — HAS live, HAS source code -->
+    <div class="project-card"
+            data-title="Anatomie Clothing Website"
+            data-number="Project 03"
+            data-type="E-Commerce / Fashion"
+            data-tags="HTML,CSS,Figma"
+            data-description="A clean, editorial fashion front-end built to let the clothes do the talking. Product hierarchy, visual breathing room, and intuitive navigation were the cornerstones — wireframed in Figma before a single line of code was written."
+            data-highlights="Figma wireframe-to-code workflow|Product grid with hover reveal effects|Minimalist editorial layout approach|Typography-driven visual hierarchy"
+            data-image="images/anatomie.png"
+            data-live="https://clairemangacu.github.io/clairemangacu.github.io-anatomie/"
+            data-code="https://github.com/clairemangacu/clairemangacu.github.io-anatomie">
+        <div class="card-image-wrap">
+            <img src="images/anatomie.png" alt="Anatomie Clothing Website">
+            <div class="card-overlay">
+                <div class="overlay-hint">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    View Project
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <span class="card-number">03</span>
+            <h3>Anatomie Clothing Website</h3>
+            <p>An editorial fashion front-end where clean layout and typographic rhythm let the products breathe and speak for themselves.</p>
+            <div class="card-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Figma</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 4: LML — HAS live, NO source code -->
+    <div class="project-card"
+            data-title="LML Arts & Sign"
+            data-number="Project 04"
+            data-type="Print & Signage Business"
+            data-tags="WordPress,CSS,UI/UX"
+            data-description="A full business website built for LML Arts n Sign — a premium printing and signage shop based in Mabalacat, Pampanga. The goal was to create a professional online presence that reflects the quality of their work, makes it easy for customers to explore services, and drives inquiries through a clean contact experience."
+            data-highlights="Built on WordPress CMS for easy content updates|Showcases services: tarpaulin printing, banners, signage & personalized items|Integrated contact section with business hours and location|Mobile-responsive layout optimized for local search|Clean, professional design aligned to the brand identity"
+            data-image="images/lml.png"
+            data-live="https://lmlartsnsign.com/"
+            data-code="none">
+        <div class="card-image-wrap">
+            <img src="images/lml.png" alt="LML Arts & Sign Website">
+            <div class="card-overlay">
+                <div class="overlay-hint">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    View Project
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <span class="card-number">04</span>
+            <h3>LML Arts & Sign</h3>
+            <p>A professional WordPress business site for a Pampanga-based printing & signage shop — built to attract local customers and showcase their services online.</p>
+            <div class="card-tags">
+                <span class="tag">WordPress</span>
+                <span class="tag">CSS</span>
+                <span class="tag">UI/UX</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 5: Hearing First — NO live, HAS source code -->
+    <div class="project-card"
+            data-title="Hearing First Website"
+            data-number="Project 05"
+            data-type="Healthcare / Web"
+            data-tags="JS,CSS,PHP"
+            data-description="A professional website built for Hearing First — a healthcare-focused platform designed to connect patients with hearing health resources. Built with a clean, accessible layout that prioritizes easy navigation and clear information delivery."
+            data-highlights="Clean accessible layout for healthcare audience|Responsive design across all screen sizes|PHP-powered dynamic content|Clear information hierarchy and navigation"
+            data-image="images/hearingfirst.png"
+            data-live="none"
+            data-code="https://github.com/clairemangacu/hearing_first">
+        <div class="card-image-wrap">
+            <img src="images/hearingfirst.png" alt="Hearing First Website">
+            <div class="card-overlay">
+                <div class="overlay-hint">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    View Project
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <span class="card-number">05</span>
+            <h3>Hearing First Website</h3>
+            <p>A clean, accessible healthcare website designed to help patients find hearing health resources with ease.</p>
+            <div class="card-tags">
+                <span class="tag">JS</span>
+                <span class="tag">CSS</span>
+                <span class="tag">PHP</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 6: Rich Sabinian — HAS live, NO source code -->
+    <div class="project-card"
+            data-title="Rich Sabinian Website"
+            data-number="Project 06"
+            data-type="Personal Branding / Web"
+            data-tags="HTML,CSS,Angular"
+            data-description="A clean, editorial personal branding website built with Angular. Product hierarchy, visual breathing room, and intuitive navigation were the cornerstones — designed to reflect a strong personal identity and professional presence."
+            data-highlights="Angular-powered single-page application|Editorial layout with strong typographic hierarchy|Product grid with hover reveal effects|Minimalist design approach|Deployed live on Netlify"
+            data-image="images/rich.png"
+            data-live="https://693807ee5011ee083f2736f5--richsabinian.netlify.app/"
+            data-code="none">
+        <div class="card-image-wrap">
+            <img src="images/rich.png" alt="Rich Sabinian Website">
+            <div class="card-overlay">
+                <div class="overlay-hint">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    View Project
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <span class="card-number">06</span>
+            <h3>Rich Sabinian Website</h3>
+            <p>An editorial personal branding site built with Angular — clean layout, strong typography, and a polished professional presence.</p>
+            <div class="card-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Angular</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- MODAL OVERLAY -->
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-label="Project Details">
+    <div class="modal-panel" id="modalPanel">
+        <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
+
+        <!-- TOP: Large Screenshot -->
+        <div class="modal-screenshot">
+            <img id="modalImage" src="" alt="">
+            <span class="modal-img-badge" id="modalType"></span>
+        </div>
+
+        <!-- BOTTOM: Two column content -->
+        <div class="modal-bottom">
+
+            <!-- Bottom Left: Overview + Key Features -->
+            <div class="modal-bottom-left">
+                <p class="modal-eyebrow" id="modalNumber"></p>
+                <h2 class="modal-title" id="modalTitle"></h2>
+
+                <p class="modal-section-label">Project Overview</p>
+                <p class="modal-description" id="modalDescription"></p>
+
+                <p class="modal-section-label">Key Features</p>
+                <ul class="modal-highlights" id="modalHighlights"></ul>
+            </div>
+
+            <!-- Bottom Right: Technologies + Links -->
+            <div class="modal-bottom-right">
+                <div class="modal-tech-box">
+                    <p class="modal-section-label">Technologies Used</p>
+                    <div class="modal-tags" id="modalTags"></div>
+                </div>
+
+                <div class="modal-links-box">
+                    <p class="modal-section-label">Project Links</p>
+                    <div class="modal-actions" id="modalActions">
+                        <a href="#" class="modal-btn primary" id="modalLive" target="_blank">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                                <polyline points="15 3 21 3 21 9"/>
+                                <line x1="10" y1="14" x2="21" y2="3"/>
+                            </svg>
+                            View Live Website
+                        </a>
+                        <a href="#" class="modal-btn secondary" id="modalCode" target="_blank">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"/>
+                                <polyline points="8 6 2 12 8 18"/>
+                            </svg>
+                            Source Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer-main">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h2 class="footer-logo">clairspace</h2>
+            <p class="footer-description">
+                Aspiring Front-End Developer passionate about creating clean, responsive, 
+                and user-friendly web experiences. Currently exploring innovative technologies 
+                to build meaningful digital solutions.
+            </p>
+        </div>
+        <div class="footer-links">
+            <h3 class="footer-heading">Quick Links</h3>
+            <nav class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="resume.html">Resume</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+        <div class="footer-connect">
+            <h3 class="footer-heading">Connect With Me</h3>
+            <div class="footer-socials">
+                <a href="https://github.com/clairemangacu" aria-label="GitHub"><img src="images/github.png" alt="Github"></a>
+                <a href="https://www.linkedin.com/in/claire-mangacu-036437377/" target="_blank" aria-label="LinkedIn">
+                    <img src="images/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="mailto:mangacuclaire@gmail.com" aria-label="Email"><img src="images/email.png" alt="Email"></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p class="copyright">© 2025 clairspace. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+    const cards    = document.querySelectorAll('.project-card');
+    const backdrop = document.getElementById('modalBackdrop');
+    const closeBtn = document.getElementById('modalClose');
+
+    function openModal(card) {
+        document.getElementById('modalImage').src               = card.dataset.image;
+        document.getElementById('modalImage').alt               = card.dataset.title;
+        document.getElementById('modalType').textContent        = card.dataset.type;
+        document.getElementById('modalNumber').textContent      = card.dataset.number;
+        document.getElementById('modalTitle').textContent       = card.dataset.title;
+        document.getElementById('modalDescription').textContent = card.dataset.description;
+
+        // View Live button
+        const liveBtn = document.getElementById('modalLive');
+        if (card.dataset.live && card.dataset.live !== 'none') {
+            liveBtn.href = card.dataset.live;
+            liveBtn.style.display = 'inline-flex';
+        } else {
+            liveBtn.style.display = 'none';
+        }
+
+        // Source Code button
+        const codeBtn = document.getElementById('modalCode');
+        if (card.dataset.code && card.dataset.code !== 'none') {
+            codeBtn.href = card.dataset.code;
+            codeBtn.style.display = 'inline-flex';
+        } else {
+            codeBtn.style.display = 'none';
+        }
+
+        // Key Features
+        const ul = document.getElementById('modalHighlights');
+        ul.innerHTML = '';
+        card.dataset.highlights.split('|').forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            ul.appendChild(li);
+        });
+
+        // Tags
+        const tw = document.getElementById('modalTags');
+        tw.innerHTML = '';
+        card.dataset.tags.split(',').forEach(t => {
+            const s = document.createElement('span');
+            s.className = 'tag';
+            s.textContent = t.trim();
+            tw.appendChild(s);
+        });
+
+        backdrop.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        backdrop.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    cards.forEach(card => {
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.addEventListener('click', () => openModal(card));
+        card.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card); }
+        });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+
+</body>
+</html>

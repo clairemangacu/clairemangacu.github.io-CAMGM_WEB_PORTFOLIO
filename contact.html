@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Clairspace</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">Clairspace</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="menu-toggle">☰</div>
+    <button id="themeToggle" class="theme-btn">🌙</button>
+</header>
+
+<section class="contact-wrapper">
+
+    <div class="contact-left">
+        <span class="sub-heading">GET IN TOUCH</span>
+        <h1>Let’s build something together.</h1>
+        <p class="contact-intro">
+        I am a Front-End Developer and UI/UX Designer focused on building high-performance, accessible, and user-centric digital experiences. By bridging the gap between clean, semantic code and intuitive design, I transform complex ideas into seamless web applications. Whether you have a project in mind or want to discuss the future of design, I’m ready to collaborate.
+        </p>
+
+        <div class="contact-method-grid">
+            <a href="mailto:mangacuclaire@gmail.com" class="method-card">
+        <span class="icon">📧</span>
+        <div class="method-text">
+            <strong>Email</strong>
+            <p>mangacuclaire@gmail.com</p>
+        </div>
+    </a>
+            <a href="tel:+639629325799" class="method-card">
+        <span class="icon">📱</span>
+        <div class="method-text">
+            <strong>Phone</strong>
+            <p>+63-962-932-5799</p>
+        </div>
+    </a>
+            <a href="https://www.linkedin.com/in/claire-mangacu-036437377/" target="_blank" class="method-card">
+                <span class="icon">🌐</span>
+                <div class="method-text">
+                    <strong>LinkedIn</strong>
+                    <p>claire-mangacu-036437377</p>
+                </div>
+            </a>
+        
+        </div>
+    </div>
+
+    <div class="contact-right">
+        <form action="https://formspree.io/f/meelrdlw" method="POST" id="contactForm">
+            
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="name">First Name</label>
+                    <input type="text" name="name" id="name" placeholder="Claire" required>
+                </div>
+                <div class="input-group">
+                    <label for="surname">Surname</label>
+                    <input type="text" name="surname" id="surname" placeholder="Mangacu" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email" placeholder="claire@example.com" required>
+            </div>
+
+            <div class="input-group">
+                <label for="message">Your Message</label>
+                <textarea name="message" id="message" rows="5" placeholder="How can I help you? Write your message here..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                <span class="btn-text">Send Message —></span>
+            </button>
+            
+            <p id="formStatus"></p>
+        </form>
+    </div>
+
+</section>
+
+<footer class="footer-main">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h2 class="footer-logo">clairspace</h2>
+            <p class="footer-description">
+                Aspiring Front-End Developer passionate about creating clean, responsive, 
+                and user-friendly web experiences. Currently exploring innovative technologies 
+                to build meaningful digital solutions.
+            </p>
+        </div>
+        <div class="footer-links">
+            <h3 class="footer-heading">Quick Links</h3>
+            <nav class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="resume.html">Resume</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+        <div class="footer-connect">
+            <h3 class="footer-heading">Connect With Me</h3>
+            <div class="footer-socials">
+                <a href="https://github.com/clairemangacu" aria-label="GitHub"><img src="images/github.png" alt="Github"></a>
+                <a href="https://www.linkedin.com/in/claire-mangacu-036437377/" target="_blank" aria-label="LinkedIn">
+                    <img src="images/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="mailto:mangacuclaire@gmail.com" aria-label="Email"><img src="images/email.png" alt="Email"></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p class="copyright">© 2025 clairspace. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
